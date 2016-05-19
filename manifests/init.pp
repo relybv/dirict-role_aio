@@ -14,6 +14,5 @@ class role_aio
   include ::profile_apache
   include ::profile_mysql
   include ::profile_nfs
-  include ::profile_haproxy
   include ::profile_rsyslog
 }
