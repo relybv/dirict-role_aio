@@ -69,4 +69,4 @@ bundle exec rake spec_prep
 # copy to puppet module location
 cp -a /root/role_aio/spec/fixtures/modules/* $MODULEDIR
 echo "Run puppet apply"
-puppet apply -e "include role_aio"
+/usr/local/bin/puppet apply -e "include role_aio"
