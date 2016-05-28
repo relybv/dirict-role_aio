@@ -17,9 +17,8 @@ describe 'role_aio class' do
         class { 'role_aio': }
         EOS
 
-        # Run it twice and test for idempotency
+        # Run and test for errors
         apply_manifest(pp, :catch_failures => true, :future_parser => true)
-        apply_manifest(pp, :catch_changes  => true, :future_parser => true)
       end
     end
 
