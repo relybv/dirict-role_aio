@@ -18,6 +18,7 @@ fixtures:
     concat: "https://github.com/puppetlabs/puppetlabs-concat.git"
     haproxy: "https://github.com/puppetlabs/puppetlabs-haproxy.git"
     staging: "https://github.com/nanliu/puppet-staging"
+    motd: "https://github.com/puppetlabs/puppetlabs-motd.git"
 
   symlinks:
     role_aio: "#{source_dir}"
