@@ -10,13 +10,10 @@
 class role_aio
 {
   # a role includes one or more profiles and at least a 'base' profile
-#  include ::profile_base
-#  include ::profile_apache
-#  include ::profile_mysql
-#  include ::profile_nfs
-#  include ::profile_rsyslog
 
   contain profile_base
+  # include rspec monitor to make rspec acceptance test available to monitor system
+  contain profile_base::rspec_monitor
   contain profile_rsyslog
   contain profile_mysql
   contain profile_nfs
