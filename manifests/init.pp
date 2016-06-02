@@ -15,9 +15,13 @@ class role_aio
   # include rspec monitor to make rspec acceptance test available to monitor system
   contain profile_base::rspec_monitor
   contain profile_rsyslog
+  contain profile_rsyslog::rspec_monitor
   contain profile_mysql
+  contain profile_mysql::rspec_monitor
   contain profile_nfs
+  contain profile_nfs::rspec_monitor
   contain profile_apache
+  contain profile_apache::rspec_monitor
 
   Class['profile_base' ] ->
   Class['profile_rsyslog' ] ->
