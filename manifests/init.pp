@@ -10,23 +10,19 @@
 class role_aio
 {
   # a role includes one or more profiles and at least a 'base' profile
+  stage{ 'first': }
+  stage{ 'second': }
+  Stage[first]->Stage[second] 
 
-  contain profile_base
-  # include rspec monitor to make rspec acceptance test available to monitor system
-  contain profile_base::rspec_monitor
-  contain profile_rsyslog
-  contain profile_rsyslog::rspec_monitor
-  contain profile_mysql
-  contain profile_mysql::rspec_monitor
-  contain profile_nfs
-  contain profile_nfs::rspec_monitor
-  contain profile_apache
-  contain profile_apache::rspec_monitor
-
-  Class['profile_base' ] ->
-  Class['profile_rsyslog' ] ->
-  Class['profile_mysql' ] ->
-  Class['profile_nfs' ] ->
-  Class['profile_apache' ]
+  class { 'profile_base': stage => first, }
+  class { 'profile_base::rspec_monitor': stage => first, }
+  class { 'profile_rsyslog': stage => first, }
+  class { 'profile_rsyslog::rspec_monitor': stage => first, }
+  class { 'profile_nfs': stage => first, }
+  class { 'profile_nfs::rspec_monitor': stage => first, }
+  class { 'profile_mysql': stage => second, }
+  class { 'profile_mysql::rspec_monitor': stage => second, }
+  class { 'profile_apache': stage => second, }
+  class { 'profile_apache::rspec_monitor': stage => second, }
 
 }
