@@ -12,7 +12,7 @@ class role_aio
   # a role includes one or more profiles and at least a 'base' profile
   stage{ 'first': }
   stage{ 'second': }
-  Stage[first]->Stage[second] 
+  Stage[first]->Stage[second]
 
   class { 'profile_base': stage => first, }
   class { 'profile_base::rspec_monitor': stage => first, }
