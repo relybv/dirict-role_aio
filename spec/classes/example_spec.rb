@@ -6,7 +6,12 @@ describe 'role_aio' do
       context "on #{os}" do
         let(:facts) do
           facts.merge({
-            :concat_basedir => "/foo"
+            :concat_basedir => "/foo",
+            :memory => {
+              'system' => {
+                'total_bytes' => 4096
+              }
+            }
           })
         end
 
