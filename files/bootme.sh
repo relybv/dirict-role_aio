@@ -53,19 +53,16 @@ else
   cd /root/role_aio
 fi
 
+# install puppet
+bash /root/role_aio/files/bootstrap.sh $PUPPETMAJOR
+
 # prepare bundle
 echo "Installing gems"
-gem install rake puppetlabs_spec_helper puppet --no-rdoc --no-ri -q
+/opt/puppetlabs/puppet/bin/gem install puppetlabs_spec_helper --no-rdoc --no-ri -q
 
 # install dependencies from .fixtures
 echo "Preparing modules"
-/usr/local/bin/rake spec_prep
-
-# uninstall puppet gem
-gem uninstall -q -x puppet
-
-# install puppet
-bash /root/role_aio/files/bootstrap.sh $PUPPETMAJOR
+/opt/puppetlabs/puppet/bin/rake spec_prep
 
 # copy to puppet module location
 cp -a /root/role_aio/spec/fixtures/modules/* $MODULEDIR
