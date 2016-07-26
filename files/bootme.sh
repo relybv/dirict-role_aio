@@ -53,12 +53,8 @@ else
   cd /root/role_aio
 fi
 
-# install puppet if not installed
-if which puppet > /dev/null 2>&1; then
-  echo "Puppet is already installed."
-else
-  bash /root/role_aio/files/bootstrap.sh $PUPPETMAJOR
-fi
+# install puppet
+bash /root/role_aio/files/bootstrap.sh $PUPPETMAJOR
 
 # prepare bundle
 echo "Installing gems"
@@ -71,11 +67,10 @@ echo "Preparing modules"
 # uninstall puppet gem
 gem uninstall -q -x puppet
 
-# setup symlink
-ln /opt/puppetlabs/puppet/bin/puppet /usr/local/bin/puppet
+# install puppet
+bash /root/role_aio/files/bootstrap.sh $PUPPETMAJOR
 
 # copy to puppet module location
-mkdir $MODULEDIR
 cp -a /root/role_aio/spec/fixtures/modules/* $MODULEDIR
 
 echo "Run puppet apply"
