@@ -34,7 +34,7 @@ function provision_ubuntu {
     apt-get -q update >/dev/null
     # Install Puppet
     echo "Installing Puppet..."
-    apt-get -y i-q --force-yes install git $AGENTNAME >/dev/null
+    apt-get -y -q --force-yes install git $AGENTNAME >/dev/null
     echo "Puppet installed!"
 }
 
