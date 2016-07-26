@@ -14,12 +14,12 @@ class role_aio
   stage{ 'second': }
   Stage[first]->Stage[second]
 
-  class { 'profile_base': stage => first, }
-  class { 'profile_base::rspec_monitor': stage => first, }
-  class { 'profile_rsyslog': stage => first, }
-  class { 'profile_rsyslog::rspec_monitor': stage => first, }
   class { 'profile_nfs': stage => first, }
   class { 'profile_nfs::rspec_monitor': stage => first, }
+  class { 'profile_base': stage => second, }
+  class { 'profile_base::rspec_monitor': stage => second, }
+  class { 'profile_rsyslog': stage => second, }
+  class { 'profile_rsyslog::rspec_monitor': stage => second, }
   class { 'profile_mysql': stage => second, }
   class { 'profile_mysql::rspec_monitor': stage => second, }
   class { 'profile_apache': stage => second, }
