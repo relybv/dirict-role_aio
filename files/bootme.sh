@@ -68,6 +68,12 @@ gem install rake puppetlabs_spec_helper puppet --no-rdoc --no-ri -q
 echo "Preparing modules"
 /usr/local/bin/rake spec_prep
 
+# uninstall puppet gem
+gem uninstall -q -x puppet
+
+# setup symlink
+ln /opt/puppetlabs/puppet/bin/puppet /usr/local/bin/puppet
+
 # copy to puppet module location
 mkdir $MODULEDIR
 cp -a /root/role_aio/spec/fixtures/modules/* $MODULEDIR
