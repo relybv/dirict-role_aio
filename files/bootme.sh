@@ -53,9 +53,6 @@ else
   cd /root/role_aio
 fi
 
-# install puppet
-bash /root/role_aio/files/bootstrap.sh $PUPPETMAJOR
-
 # prepare bundle
 echo "Installing gems"
 gem install rake puppetlabs_spec_helper puppet --no-rdoc --no-ri -q
