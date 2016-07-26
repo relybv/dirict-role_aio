@@ -69,6 +69,7 @@ echo "Preparing modules"
 /usr/local/bin/rake spec_prep
 
 # copy to puppet module location
+mkdir $MODULEDIR
 cp -a /root/role_aio/spec/fixtures/modules/* $MODULEDIR
 
 echo "Run puppet apply"
