@@ -1,7 +1,8 @@
 fixtures:
+  forge_modules:
+     stdlib: "puppetlabs/stdlib"
+
   repositories:
-    stdlib: "https://github.com/puppetlabs/puppetlabs-stdlib.git"
- 
 # role module layout, include profile base and ntp module
     profile_base: "https://github.com/relybv/dirict-profile_base.git"
     profile_nfs: "https://github.com/relybv/dirict-profile_nfs.git"
