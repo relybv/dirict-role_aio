@@ -23,6 +23,7 @@ fixtures:
     augeasproviders_core: "git://github.com/hercules-team/augeasproviders_core.git"
     augeasproviders_shellvar: "git://github.com/hercules-team/augeasproviders_shellvar.git"
     wget: "https://github.com/maestrodev/puppet-wget.git"
+    gai: "https://github.com/smoeding/puppet-gai.git"
 
   symlinks:
     role_aio: "#{source_dir}"
