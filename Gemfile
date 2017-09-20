@@ -3,13 +3,14 @@ source "https://rubygems.org"
 group :test do
   gem "rake", '< 11.0'
   gem "puppet", ENV['PUPPET_GEM_VERSION'] || ' > 3.8.0', '< 5.0'
+  gem "facter", '2.4.6'
   gem "rspec"
   gem "rspec-puppet"
   gem "puppetlabs_spec_helper"
   gem "metadata-json-lint"
   gem "rspec-puppet-facts"
   gem 'ci_reporter_rspec', '>= 1.0.0'
-
+  gem "semantic_puppet"
   gem "puppet-lint-leading_zero-check"
   gem "puppet-lint-trailing_comma-check"
   gem "puppet-lint-version_comparison-check"
